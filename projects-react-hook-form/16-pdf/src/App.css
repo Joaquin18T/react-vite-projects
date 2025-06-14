@@ -1,0 +1,48 @@
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: system-ui;
+}
+
+
+.pregunta{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pregunta label{
+  width: 70px;
+}
+
+input{
+  padding: 5px 6px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  outline: none;
+  box-shadow: 0 0 5px gray;
+}
+
+.aviso{
+  color:#fff;
+  background-color: red;
+  padding: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+  width:fit-content;
+  font-size: 0.8em;
+}
+
+.resumen{
+  background-color: green;
+  margin-top: 5px;
+  padding: 3px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-inner-spin-button{
+  appearance: none;
+  margin: 0;
+}

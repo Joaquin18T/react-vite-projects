@@ -1,0 +1,286 @@
+body{
+  background-color: #222;
+  color: #fff;
+}
+.barra{
+  background-color: crimson;
+  width: var(--hasta);
+  height: 30px;
+  /* animation: 1.5s animate  ease-out; */
+  transition: width 1.5s ease-out;
+  
+}
+
+.exercise1{
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+
+}
+.exercise1:hover{
+  width: 150px;
+  transition-property: all;
+  transition-delay: 0.5s;
+  transition-duration: 1s;
+  background-color: aquamarine;
+}
+
+.exercise2{
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  display: flex;
+  transition-property: width display;
+  transition-duration: 1s;
+  transition-behavior:allow-discrete;
+}
+.exercise2:hover{
+  width: 150px;
+  background-color: violet;
+}
+
+.square{
+  width: 40px;
+  height: 40px;
+  background-color: #222;
+  margin: 5px;
+}
+
+.element{
+  height: 60px;
+  width: 60px;
+  background-color: blue;
+  transition: opacity 2s linear;
+  @starting-style{opacity: 0;}
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+  transition-property: width;
+  transition:1s ease-in-out;
+}
+
+.logo:hover{
+  width: 90px;
+  height: 90px;
+}
+
+.rotar{
+  width: 40px;
+  height: 40px;
+  background-color: darkblue;
+  transition: transform 0.5s linear;
+}
+
+.rotar:hover{
+  transform: rotate(45deg);
+}
+
+.desaparecer{
+  width:70px;
+  height: 70px;
+  background-color: darkolivegreen;
+  transition: opacity 1s ease-in-out;
+}
+
+.desaparecer:hover{
+  opacity: 0;
+}
+
+.animations{
+  margin-top: 20px;
+  height: 300px;
+}
+
+.bouncing-box{
+  width: 40px;
+  height: 40px;
+  background-color: cornflowerblue;
+  animation: 
+    bouncing 2s infinite 0s ease-out;
+}
+
+@keyframes bouncing{
+  0%,100%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(100px);
+  }
+}
+
+.rotating-circle{
+  width: 40px;
+  height: 40px;
+  background-color: darkgreen;
+  border-radius: 100%;
+  animation: rotar 1s infinite alternate linear,
+  changing-color 4s infinite 1s linear;
+}
+
+@keyframes rotar{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.color-changing-box{
+  height: 50px;
+  width: 50px;
+  background-color: gray;
+  animation: changing-color 4s infinite 2s linear;
+}
+
+@keyframes changing-color {
+  0%{
+    background-color: red;
+  }
+  25%{
+    background-color: blue;
+  }
+  75%{
+    background-color: yellow;
+  }
+  100%{
+    background-color: red;
+  }
+}
+
+.blinking-text{
+  animation: parpadear 1s step-start infinite;
+}
+
+@keyframes parpadear{
+  0%{
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.zigzag-box{
+  width: 40px;
+  height: 40px;
+  background-color: darkred;
+  animation: zig-zag 3 s infinite 1s linear;
+}
+
+@keyframes zig-zag {
+  0%{
+    transform: translate(0px, 10px);
+  }
+  20%{
+    transform: translate(100px,15px);
+  }
+  50%{
+    transform: translate(0px,20px);
+  }
+  75%{
+    transform: translate(100px,30px);
+  }
+  100%{
+    transform: translate(0px,10px);
+  }
+}
+
+.combined{
+  margin-top: 10px;
+}
+
+.card{
+  height: 50px;
+  width: 50px;
+  transition: transform 1s;
+}
+
+.card:hover{
+  transform: rotateY(180deg);
+}
+
+.front{
+  background-color:darkviolet;
+}
+.back{
+  background-color:cornflowerblue;
+  transform: rotateY(180deg);
+
+}
+
+
+.temblar{
+  background-color: darkred;
+  animation: temblar 0.5s ease-in-out 0s 3;
+}
+
+@keyframes temblar{
+  0%{
+    transform: rotateZ(5deg);
+  }
+  50%{
+    transform: rotateZ(-5deg);
+  }
+  100%{
+    transform: rotateZ(5deg);
+  }
+}
+
+.main-circle{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: skyblue;
+  display: flex;
+  align-items: center;
+}
+
+.drip{
+  width: 20px;
+  height: 30px;
+  border-radius: 100%;
+  margin: 2px;
+  background-color: skyblue;
+  animation: gotear 2s linear 0s infinite;
+}
+
+.drip:nth-child(1) {
+  left: 30%;
+  animation-delay: 0.2s;
+}
+
+.drip:nth-child(2) {
+  left: 50%;
+  animation-delay: 0.4s;
+}
+
+.drip:nth-child(3) {
+  left: 70%;
+  animation-delay: 0.6s;
+}
+
+@keyframes gotear{
+  0%{
+    opacity: 1;
+    transform: translateY(10px);
+    transform: scale(0.5);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(90px);
+  }
+}
+.figura-test{
+  background-color: greenyellow;
+  height: 40px;
+  width: 40px;
+  transition: transform 1s linear;
+}
+
+.figura-test:hover{
+  transform: translateX(150px);
+  transform: scale(0.5);
+  transform: rotateZ(360deg);
+}

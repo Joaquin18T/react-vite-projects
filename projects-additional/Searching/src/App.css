@@ -1,0 +1,49 @@
+body{
+  background-color: #222;
+  color: #fff;
+  font-family:system-ui;
+}
+
+.tb-people{
+  width: 80%;
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+th{
+  height: 6vh;
+}
+
+th,td{
+  text-align: left;
+  border: 1px solid gray;
+  padding-inline-start: 5px;
+}
+
+button{
+  height: 2em;
+  font-size: 14px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background-color: #fff;
+  margin: 2px;
+}
+
+.options-table{
+  display: flex;
+  align-items: center;
+}
+
+input{
+  border: 1px solid gray;
+  border-radius: 3px;
+  block-size: 1.5em;
+}
+
+tfoot>tr>td>button{
+  inline-size: 3%;
+}
+
+.element-hidden{
+  visibility: hidden;
+}

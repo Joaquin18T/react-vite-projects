@@ -1,0 +1,20 @@
+.parentImage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back-image{
+
+  background-color: yellow;
+  margin: 5px;
+}
+img{
+  width: 100px;
+}
+
+
+.child-image{
+  margin-right: 10px;
+  margin-bottom: 50px;
+  background-color: yellow;
+}

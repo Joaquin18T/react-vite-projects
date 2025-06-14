@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: 'Montserrat';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contain-candidatos{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  width: fit-content;
+}
+
+.candidato{
+  display: flex;
+  align-items: center;
+  width: 600px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.dato-candidato{
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.dato-candidato h3{
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.acciones-candidato{
+  display: flex;
+  flex-direction: column;
+}
+
+.contain-contratos{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.contrato{
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contrato h4,p{
+  margin: 0px;
+  margin: 5px;
+}
+
+option{
+  color: #222;
+}
+
+.header-candidato{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1250px;
+}
+
+.btn-blue{
+  background-color: gray;
+  color: #fff;
+  border: 1px solid #fff;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 3px;
+  font-size:15px;
+  font-family: 'Montserrat';
+  text-align: center;
+}
+
+.prev-contratos{
+  margin-top: 10px;
+}
+
+.btn-prev{
+  height: 30px;
+  width: fit-content;
+  font-size: 15px;
+  font-family: 'Montserrat';
+  margin-right: 5px;
+  border: 1px solid blue;
+  background-color: #fff;
+  color: blue;
+  border-radius: 5px;
+}
+
+.btn-prev:hover{
+  background-color: blue;
+  color: #fff;
+}
+
+.header-contratos{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.places{
+  font-family: 'Montserrat';
+  text-decoration: none;
+  border-style: none;
+}
+
+.places:focus{
+  outline: none; /* Quita el borde al seleccionar */
+  box-shadow: none; /* Quita el sombreado adicional */
+}
+
+.eliminar-contrato{
+  font-family: 'Montserrat';
+  margin-top: 10px;
+}

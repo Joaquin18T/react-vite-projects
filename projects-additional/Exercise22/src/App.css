@@ -1,0 +1,19 @@
+body{
+  background-color: #222;
+  color: #fff;
+}
+
+button{
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.primary{
+  background-color: blue;
+}
+.secondary{
+  background-color: gray;
+}
+.danger{
+  background-color: crimson;
+}

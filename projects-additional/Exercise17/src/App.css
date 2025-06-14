@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: 'Montserrat';
+}
+
+.contain{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contain-foods{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 400px;
+}
+
+.food{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  margin: 5px;
+  border: 1px solid orange;
+  border-radius: 5px;
+}
+
+.contain-rates{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.rate{
+  width: 250px;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.contain-stars{
+  width: 180px;
+}
+
+.star{
+  width: 14px;
+}

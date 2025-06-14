@@ -1,0 +1,97 @@
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: system-ui;
+  font-weight:500;
+}
+
+.ex1-contenedor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ex1-boton{
+  margin: 2px;
+  background-color: orange;
+  color: #fff;
+  border: 1px solid gray;
+  font-size: large;
+  border-radius: 5px;
+}
+
+.ex1-contenido{
+  width: 30%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ex1-contenido img{
+  width: 200px;
+  height: 200px;
+}
+
+/* ESTILOS DEL EXERCISE 02 */
+.ex2-contenedor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ex2-reyes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.ex2-rey{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.ex2-imagen{
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+}
+
+.ex2-votos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ex2-titulo span{
+  color: red;
+}
+
+.ex2-nombre-rey{
+  font-size: 25px;
+}
+
+.ex2-boton{
+  font-size: large;
+
+}
+
+.ex2-voto-rey{
+  text-align: center;
+  font-size:x-large;
+  height: 40px;
+  width: 56px;
+  color: #222;
+  background-color: #fff;
+}

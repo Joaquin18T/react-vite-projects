@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  font-family: 'Montserrat';
+}
+.container{
+  border-bottom: 5px solid #222;
+  border-left: 5px solid #222;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 20px;
+}
+
+.containerGrande{
+  width: 900px;
+}
+.barra{
+  width: 90px;
+  height: 1;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  overflow: hidden;
+}
+
+.rojo{
+  background-color: crimson;
+}
+
+.animar{
+  animation: animar1 2s infinite ease-in-out;
+  animation-play-state: running;
+}
+.parar{
+  animation-play-state: paused;
+}
+@keyframes animar1{
+  0%{
+    height: 10px;
+  }
+  50%{
+    height:var(--altura);
+  }
+  100%{
+    height:10px;
+  }
+}
+/* --------------------------------------- */
+.prc-contain{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.prc-barra{
+  height: 25px;
+  width: 370px;
+  background-color: #303030;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content:left;
+}
+
+.prc-load{
+  height: 18px;
+  /* width: 146px; */
+  background-color: gold;
+  border-radius: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.prc-animar{
+  animation: prcanimar1 2s infinite ease-in-out;
+  animation-play-state: running;
+}
+
+@keyframes prcanimar1{
+  0%{
+    width: 1px;
+  }
+  50%{
+    width:360px;
+  }
+  100%{
+    width:1px;
+  }
+}
+
+.prc-ruleta{
+  width: 360px;
+  height: 360px;
+  position: relative;
+}
+
+.prc-ruleta-animar{
+  animation: prcanimar-ruleta1 3s ease-in-out forwards;
+}
+
+@keyframes prcanimar-ruleta1{
+  0%{
+    transform: var(--grados);
+  }
+  100%{
+    transform: var(--maxgrados);
+  }
+}
+
+.prc-puntero{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 82px;
+  top: 140px;
+}
+
+.elementos-juego{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prc-contain-moneda{
+  width: 350px;
+  height: fit-content;
+}
+
+.prc-moneda{
+  width: 25px;
+  height: 25px;
+}
+
+.hiddenPart{
+  visibility: hidden;
+}
+
+.prc-contain-element{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prc-contain-ticket{
+  width: 100px;
+  height: fit-content;
+}
+.prc-ticket{
+  height: 20px;
+  width: 30px;
+  margin: 3px;
+}
+
+.contain-mensaje{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.mensaje{
+  background-color: green;
+  border-radius: 10px;
+  padding: 5px;
+}
