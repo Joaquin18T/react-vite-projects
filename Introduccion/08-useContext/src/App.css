@@ -1,0 +1,43 @@
+*{
+  background-color: #222;
+  color: #fff;
+  font-family: system-ui;
+}
+
+.app{
+  display: flex;
+  height: calc(100vh - 40px);
+}
+
+.children{
+  width: 33.3%;
+  border: 1px solid #fff;
+  text-align: center;
+}
+
+.colors{
+  display: flex;
+  width: 150px;
+}
+
+.color{
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  margin:5px;
+  cursor: pointer;
+}
+
+.color:nth-child(1){
+  background-color: #ff4757;
+}
+
+.color:nth-child(2){
+  background-color: #eccc68;
+}
+.color:nth-child(3){
+  background-color: #7bed9f;
+}
+.color:nth-child(4){
+  background-color: #a4b0be;
+}

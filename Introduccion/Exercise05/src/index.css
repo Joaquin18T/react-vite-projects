@@ -1,0 +1,20 @@
+img{
+  width: 100%;
+}
+
+.rey{
+  display: grid;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.texto{
+  display: flex;
+  margin: 0;
+  padding-left: 5px;
+}
+
+.nombre-rey{
+  color: red;
+}

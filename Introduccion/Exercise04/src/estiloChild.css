@@ -1,0 +1,20 @@
+.rey{
+  margin: 4px;
+  padding: 4px;
+}
+
+.nombreRey{
+  font-size: large;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.dataRey{
+  display: flex;
+  flex-direction: column;
+}
+
+button{
+  width: min-content;
+  outline: none;
+}

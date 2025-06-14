@@ -1,0 +1,13 @@
+.list{
+  display: flex;
+  flex-direction: column;
+}
+.pagar{
+  font-size: larger;
+  font-weight: bold;
+}
+
+.reyes{
+  display:inline-flex;
+
+}

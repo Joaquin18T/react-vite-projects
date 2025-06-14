@@ -1,0 +1,50 @@
+
+nav{
+  background-color: gray;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+}
+a{
+  font-size: 20px;
+  text-decoration: none;
+  height: 40px;
+  width: max-content;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  color: #222;
+}
+
+.contain-imagenes{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.contain-imagenes a{
+  width: 400px;
+  height: 400px;
+  display: flex;
+}
+
+.nombre_rey{
+  font-size: 2em;
+  color: crimson;
+  font-weight: bold;
+}
+
+.activado{
+  background-color: #222;
+  color: #fff;
+}
+
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
