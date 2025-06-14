@@ -1,0 +1,90 @@
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: system-ui;
+}
+#root{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.letras{
+  display: grid;
+  grid-template-columns: repeat(18, 0fr);
+  gap: 10px;
+}
+
+.letra{
+  background-color: #fff;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+
+}
+
+.content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content-palabra{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+
+.span-espacio {
+  display: inline-block;
+  width: 22px; /* Ajusta la longitud del guion */
+  height: 2px; /* Ajusta el grosor del guion */
+  background-color: #fff; /* Ajusta el color */
+  margin: 0 8px; /* Espaciado entre guiones */
+}
+
+.correcto{
+  background-color: green;
+  color: #fff;
+  border-color: #fff;
+}
+
+.incorrecto{
+  background-color: red;
+  color: #fff;
+  border-color: #fff;
+
+}
+
+.palabras-elegidas{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.palabras-elegidas span{
+  height: 30px;
+  width: 26px;
+  font-size: 40px;
+  padding: 0 6px;
+  text-align: center;
+}
+
+.ahorcado{
+  height: 300px;
+  margin: 10px;
+}
+
+.contain-lose{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

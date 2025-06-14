@@ -1,0 +1,1 @@
+Las imágenes están ya subidas en Internet. En el array de objetos (array.txt) ya están referenciadas correctamente, por lo que no hay que descargar ninguna imagen.

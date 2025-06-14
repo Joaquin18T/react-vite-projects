@@ -1,0 +1,59 @@
+body{
+  background-color: #222;
+  color: gray;
+  font-family: system-ui;
+}
+
+.form-principal{
+  display: flex;
+  flex-direction: column;
+}
+
+.lugares{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.row-send{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+
+.lugar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.preguntas{
+  display: flex;
+  align-items: self-start;
+  flex-direction: column;
+}
+
+.resumen{
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+
+.contain-preguntas{
+  display: flex;
+  justify-content: space-between;
+}
+
+.pregunta-contain{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.total{
+  font-size: larger;
+}

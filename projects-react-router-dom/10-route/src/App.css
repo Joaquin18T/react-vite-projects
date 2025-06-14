@@ -1,0 +1,15 @@
+*{
+  font-family: system-ui;
+}
+
+a{
+  text-decoration: none;
+  color:#fff;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.activado{
+  color: gold;
+}
