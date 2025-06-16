@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+/*Crear nuevas clases*/
+@theme{
+  --color-black-modern:#222
+}
+
+/* Evita el repetir los name-classes */
+.style-input{
+  @apply border-2 border-gray-700 bg-white text-black p-1 rounded-md focus:outline-none mt-2;
+}

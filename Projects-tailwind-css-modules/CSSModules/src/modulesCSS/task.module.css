@@ -1,0 +1,15 @@
+.contain_list{
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid #f84;
+  border-radius: 8px;
+  width: 25%;
+}
+.item{
+  padding-inline-start: 0;
+  padding: 2px;
+}
+
+.complete{
+  text-decoration:line-through;
+}

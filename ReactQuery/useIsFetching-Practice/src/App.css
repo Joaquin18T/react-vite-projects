@@ -1,0 +1,8 @@
+body{
+  background-color: #222;
+  color: #fff;
+}
+
+.container-ex{
+  display: flex;
+}

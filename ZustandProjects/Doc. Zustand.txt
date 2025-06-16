@@ -1,0 +1,65 @@
+Doc. Zustand
+
+Zustand es una libreria que gestiona datos de manera global en tu aplicacion. Es una de las librerias mas sencilla para este caso.
+
+Instalacion: npm install zustand
+
+Para crear tu State primero en un archivo aparte. Este archivo funciona como un useState. Primero se importa el metodo 'create'; asignale create a una 'constante'. Como parametro es una funcion de flecha que retorna un objeto. En la funcion recibe 2 parametros llamados set y get; set es un metodo que sirve para actualizar los valores del estado y get se usa para obtener los valores del estado.
+
+Set: es un metodo que recibe una funcion de flecha siempre y cuando necesite trabajar con el valor del estado para actualizar el mismo o cuando recibe un parametro. Si no lo necesitas, el metodo set tambien puede recibir un objeto donde actualizes directamente el estado, donde especificas la clave del estado y su nuevo valor. Ejm:
+
+set((state)=>({counter:state.counter+1}))
+set({counter:counter*value})
+
+Get: Es un metodo que sirve para obtener los valores del estado. Ejm
+get().tasks
+
+Aca se obtiene el valor del estado tasks.
+
+En el objeto que recibe la funcion dentro del create se establece el estado y sus acciones. El valor de las acciones deben ser una funcion de flecha. Es opcional si la accion necesite un parametro. Dentro de la funcion se usa el set o el get. Ejm:
+
+export const useCounter = create((set,get)=>({
+  counter:0,
+  count:0,
+  posts:[],
+  increaseCounter:()=>{set((state)=>({counter:state.counter+1}))},
+
+  getPosts:async()=>{
+    const res=await(await fetch("https://jsonplaceholder.typicode.com/posts")).json(); //manera resumida
+    set(state=>({...state, posts:res}))
+  },
+
+  filterTsk:(op=null)=>{
+    if(op!=null){
+      return get().tasks.filter(tsk=>tsk.state===op);
+    }
+    return get().tasks;
+  },
+}));
+
+Aca una accion esta usando fetch para actualizar el estado.
+
+Los valores del estado pueden almacenarse en un local storage que maneja Zustand. Para ello hay que importar el metodo persist (import {persist} from 'zustand/middleware'). Ahora en el create se pasa el metodo persist, ejm:
+export const useTask = create(persist((set,get)=>({...
+
+Como primer parametro, se le pasa la funcion con el estado, y en el segundo parametro se le pasa el nombre que tendra el estado en el local storage. Este segundo parametro va al final del estado:
+...}),{name:"option-tasks"}));
+
+Para usar el estado en un componente de React, primero se importa el archivo donde se encuentra el estado. Luego llamas a la constante que almacena el estado y asignalo a una constante en el componente. La constante importada  es un metodo, como parametro recibe una funcion que retorna el estado. Para ello vamos a usar el metodo useShallow (import { useShallow } from 'zustand/shallow';), evita que se renderice varias veces el estado, este metodo recibe una funcion, como parametro de la funcion es el estado en si, y ya en el cuerpo se llama a las acciones y props del estado:
+
+  const {count, posts} = useCounter(
+    useShallow((state) => ({
+	count:state.counter, 
+	posts:state.posts}))
+  );
+
+Cosas:
+comparacion atomatica: compara propiades especificas de un objeto
+
+En Zustand se compara las props especificas dentro del objeto en el estado global:
+const count = useCounter(state => state.counter); 
+Solamente se renderiza cuando counter cambia de valor
+
+Separar las propiedades que son funciones con las props que solamente leen
+
+ Para mas info ver el proyecto de Introduccion y Ejercicio 1 en la carpeta ZustandProjects

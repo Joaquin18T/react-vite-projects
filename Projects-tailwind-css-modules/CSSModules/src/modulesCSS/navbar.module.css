@@ -1,0 +1,17 @@
+.bar_navigate{
+  background-color: #a8dadc;
+  display: flex;
+  justify-content:space-around;
+}
+
+.link{
+  color: #562c2c;
+  text-decoration: none;
+  padding: 2px;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight:500;
+}
+.link:hover{
+  color: #fff;
+}

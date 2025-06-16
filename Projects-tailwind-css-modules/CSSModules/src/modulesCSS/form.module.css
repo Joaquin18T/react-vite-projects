@@ -1,0 +1,36 @@
+.contain_card{
+  border: 2px solid #f99;
+  border-radius: 8px;
+  width: 22%;
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.field_form{
+  background-color: #fff;
+  border:2px solid #8d99ae;
+  border-radius: 5px;
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+  font-size: 14px;
+  height: 20px;
+  width: 50%;
+}
+
+
+.btn_form{
+  background-color: #fff;
+  border: 2px solid #8d99ae;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 22%;
+}
+
+.field_form:focus,.btn_form:focus{
+  outline-style: none;
+  border: 2px solid gray;
+}

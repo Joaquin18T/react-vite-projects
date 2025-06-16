@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: system-ui;
+}
+.task-contain-item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-block-end:9px;
+}

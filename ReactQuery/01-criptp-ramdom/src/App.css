@@ -1,0 +1,12 @@
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: system-ui;
+}
+
+.contain-numero-aleatorio{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

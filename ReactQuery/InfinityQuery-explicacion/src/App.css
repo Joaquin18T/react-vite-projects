@@ -1,0 +1,9 @@
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: system-ui;
+}
+
+img{
+  inline-size: 5vw;
+}

@@ -1,0 +1,128 @@
+Es mejor usar solo un return para una mejor lectura de codigo, si uno falla, renderiza el que no ha fallado. Con esta forma cada seccion maneja su propio estado. Ademas, no desaparce la UI si se usan mas de un return  con condiciones.
+
+TANSACK QUERY (npm i @tanstack/react-query)
+Esta libreria se usa para manejar mejor la solicitudes HTTPS con React
+
+En el archivo main.jsx se tiene que instanciar el objeto QueryClient para que toda la aplicacion pueda usar la libreria.
+
+Hook useQuery: se usa para obtener datos (lectura). Se pasa un objeto como argumento:
+
+- queryKey: el valor es un array con la clave de cada consulta
+- queryFn: valor es una funcion que retorna una promesa
+
+En el queryKey todos los elementos del array identifican a cada solicitud, si hay paginacion se recomienda hasta mas de 3 elementos, el primer elemento si o si es una cadena, lo siguiente es la url y el ultimo el numero de pagina
+
+
+Este hook retorna un objeto con propiedades interesantes para el maenjo de errores, solicitar nuevamente la solicitud, etc:
+
+data: almacena los datos de la respuesta a la solicitud HTTP
+
+isLoading: booleano que representa el estado de la solicitud(false si esta en proceso, true si ya hay una respuesta).
+
+isError: booleano que representa el estado del error de la solicitud(false si no hay error, true si hay error)
+
+error: mensaje del error. Su valor es una objeto que tiene propiedades para ver valores del mensaje del error (la propiedad messagem muestra el mensaje del error).
+
+refetch: es una funcion que vuelve a ejecutar la consulta para obtener los datos mas recientes
+
+isFetching: es como la propiedad isLoading pero la pequeña diferencia es que isLoading cambia a true cuando es la primer carga, y luego ya no cambia de valor (false). y isFetching cambia de valor cada vez que se vuelva  a ejecutar la consulta (true), si ha refrescado pasa a false. Lo mismo pasa en la primera vez de la consulta.
+
+keepPreviousData: sirve para avisar al useQuery que mantenga los datos de la consulta anterior mientras se carga nuevos datos, para ello hay que darle en valor de true, ya que false es su valor por defecto. Sirve para la paginacion 
+
+enabled: Valida que los argumentos pasados a la funcion de queryFn sean validos, ejm: (enabled:!! country) esto quiere decir que no va a ejecutar la consulta si country es undefined o null. Siempre se asigna un booleano false en esta propiedad
+
+placeholderData:Si hay datos previos, mantiene los datos visibles mientras la nueva consulta se realiza. Si no hay datos previos (primera carga), usar un array vacio para evitar errores de acceso a undefined.
+Cuando los nuevos datos llegan, se reemplazan automáticamente sin que la interfaz desaparezca. (util en useQueries)
+
+
+Cuando cambias de ventana o pestaña los datos se vuelven a sincronizar cada vez que regresas a la vista de tu proyecto, esto es una caracteristica de Tansack Query donde garantiza que los datos mostrados esten sincronizados con el sevidor en caso de que haya cambios
+
+Para una mejor UX, es mejor combinar el isLoading y el isFetching
+
+Al cambiar el queryKey se va a deseparecer los datos que se muestran. Por lo que se reinicia completamente la consulta. Para evitar esto, solamente agregar el isFetching y con esto ya no se borra la lista.
+
+Si unos de los valores del queryKey cambia de valor. la consulta se ejecutara nuevamente.
+
+HOOK useInfinityQuery: 
+Su proposito es tener una mejor gestion de paginas con datos.
+Como argumento se le pasa una serie de propiedades:
+queryKey: clave de la consulta, no se le incluye le numero de paginas el hook lo gestiona internamente
+
+queryFn: funcion que retorna una promesa, esta funcion debe tener un objeto como parametro con el nombre de la propiedad pageParam. Porque cada vez que se usa el hook esta propiedad recibe un objeto con el nombre de pageParam y su valor es la pagina actual: {pageParam:1}
+
+getNextPageParam: funcion que valida si la siguiente pagina contiene datos, si hay retorna el numero de la pagina, si no, retorna undefined. Como parametro recibe los datos de la ultima pagina cargada, el segundo parametro es un array con todas las paginas cargadas hasta el momento
+
+El hook retorna estos y otras mas propiedades:
+data: retorna un objeto, en la propiedad (pageParams), su valor es un array con las paginas que se han mostrado. La segunda propiedad del objeto es pages, su valor es un array con los datos de cada pagina, cada pagina es un array, osea es un array de arrays
+
+isFecthingNextPage: propiedad que valida si esta cargando la siguiente pagina (true) o no (false)
+
+FetchNextPage: funcion que ejecuta la solicitud de mostrar los datos de la siguiente pagina
+
+hasNextPage: valida si la siguiente pagina tiene datos (true) o no (false), cuando pasa a false es porque la funcion getNextPageParam retorno undefined.
+
+refetchOnWindowFocus: Evita que se actualice los datos cuando se cambia de pestaña
+
+Nota: Es mejor crear la funcion en donde se hace la consulta  a una api afuera del componente, ya que asi se evita que se cree en cada renderizacion y asi no afecta al rendimiento. Tambien useInfinityQuery como useQuery necesita que la funcion (queryFn) sea estable y que no cambie. Asi ReactQuery mantiene el cache correctamente cuando la funcion no cambia en cada render y es una buena practica recomendada en react para mejorar la modularidad del codigo
+
+Funciones que hacen consultas externas deben definirse fuera del componente para evitar renderizaciones innecesarias y mejorar el rendimiento.
+
+La funcion se crea afuera del componente ya que asi solamente se ejecuta la primera vez que se monta el componente y cuando se actualizan los datos, (revalidacion automatica o manual).
+
+  const {data, isFetchingNextPage, fetchNextPage, hasNextPage} = useApiInfinityQuery("https://jsonplaceholder.typicode.com/posts", 
+  {first:"_limit",second:"_page"}, undefined);
+
+Cuando la respuesta de una api no esta en el cuerpo de la respuesta, se necesita extraerlo de una propiedad especifica. Y para hacerlo se necesita un parseo:
+
+const parseData = (data)=>data.results;
+
+Aca la respuesta de la api esta en la propiedad results, por lo que no estan en el cuerpo de la respuesta y necesita un parseo
+(mirar hook personalizado useApiInfinityQuery)
+
+
+USEMUTATION
+Sirve para mutar los datos de una api (POST, UPDATE, DELETE)
+
+Nota: en la funcion que hace la consulta  a la api, lanzar un error explicito ya que si no se hace, la mutacion siempre se considerara exitosa sin importar si la api devuelve un error
+
+Propiedades de useMutation:
+-mutationFn: funcion que ejecuta la mutacion
+-onSuccess: Si la respuesta de la api es exitosa ejecuta la funcion de onSuccess. (ya que onSuccess su valor es una funcion)
+
+queryClient.invalidateQueries(['users']);
+
+Actualiza los datos de la cache con la clave users. Si hay un useQuery usando la misma clave, lo actualizara automaticamante sin recargar la pagina. queryClient es un objeto de la clase useQueryClient. Hace una nueva petición a la API para obtener los datos más recientes. Se usa cuando se necesita sincronizar los datos con el servidor. Una desventaja es que hace una nueva consulta, lo que puede ser innecesario si ya tienes los datos.
+
+
+queryClient.setQueryData(["users"], (oldData) => {}
+
+actualiza manualmente los datos almacenados en caché para la clave ["users"].
+Si otro componente usa useQuery(['users']) se actualizara automaticamente sin necesidad de hacer otra solicitud. Su ventaja es que si otro usuario modifica la base de datos en el servidor, la caché local podría estar desactualizada. 
+
+Propiedades que retorna useMutation
+
+mutate: ejecuta la mutacion, llama a mutationFn. Como argumento se pasa el dato con el que vas a mutar 
+
+isPending: propiedad que pasa a true cuando la mutacion esa en proceso, false cuando ya finalizo
+
+isSuccess: valida si la mutacion fue exitosa (true)
+
+isError: valida si la mutacion tuvo un error (true)
+
+Para eliminar un dato con este hook, la mutacion debe retornar el id eliminado.
+
+Hook useIsFetching
+Este hook es util para detectar todos los useQuery que estan en proceso despues de la carga inicial. Retorna la cantidad de useQuery que estan en proceso. Asi se puede evitar acciones en medio de cargas
+
+Para que useIsFetching diferencie que hay mas de un useQuery en la App, deben de tener un queryKey diferente.
+
+useIsFetching({queryKey:['users']});
+Al pasar una objeto con la propiedad queryKey. Solamente va a detectar todos los useQuery que tenga el mismo nombre de la clave ('users')
+
+HOOK useQueries
+Este hook hace varias consultas en paralelo para asi evitar usar varios useQuery. Cada consulta mantiene su estado independientemente
+
+Como parametro recibe un objeto, propiedades:
+
+queries: su valor es un array de objetos. Donde cada objeto es un useQuery. Aca se pone las propiedades de un useQuery normal
+

@@ -1,0 +1,592 @@
+#root{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: system-ui;
+  margin: 0;
+  font-size: large;
+}
+button:focus, select:focus, input:focus{
+  outline: none;
+}
+main{
+  width: 100%;
+}
+nav{
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  height: 7vh;
+  max-height: 100px;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-inline-start:10px;
+  margin-inline-end:10px;
+}
+a>img{
+  margin-block-start: 6px;
+  height: 7vh;
+  min-height: 5vh;
+  width: 100%
+}
+.contai-table-product{
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.row-form{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.row-form input, .row-form select {
+  flex: 1;
+  min-width: 150px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.row-form select{
+  margin-block-end: 10px;
+  font-size: 16px;
+}
+
+.container-input-design{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-block-end: 10px;
+}
+.line-hr{
+  width: 90vw;
+}
+
+.message-alert{
+  color: rgb(170, 0, 0);
+  font-weight:500;
+}
+
+.contain-categoria{
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+.contain-categoria h2{
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+/* Estilos de la tabla */
+.table-categoria {
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+.table-categoria th, .table-categoria td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Scroll horizontal en pantallas pequeñas */
+@media (max-width: 600px) {
+  .table-categoria {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .row-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
+
+.width-th{
+  width: 3em;
+}
+
+.widthv2-th{
+  width: 15vw;
+}
+
+.center-text-table{
+  text-align: center;
+}
+
+.height-tr-table{
+  height: 4vh;
+  max-height: 20px;
+}
+
+.btn-page-table{
+  width: 7vw;
+  max-width: 40px;
+  font-size: large;
+}
+
+.btn-submit {
+  background: gray;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 20%;
+  margin-top: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+.btn-submit:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.inpt-search {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.margin-end-7{
+  margin-inline-end: 7px;
+}
+
+.contain-main-product{
+  width: 100%;
+}
+.contain-main-product h2{
+  margin-inline-start: 15px;
+}
+
+.contain-search-and-table {
+  margin-top: 20px;
+  height: 60vh;
+}
+.contain-search{
+  display: flex;
+  justify-content:flex-start;
+}
+.contain-search label{
+  width: 30%;
+}
+.contain-search input{
+  width: 50%;
+  font-size: 0.9rem;
+}
+
+.select-block{
+  width:550px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 28vh;
+  margin-block-start: 5px;
+}
+
+.contain-select{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin-block-end: 2vh;
+}
+
+.contain-select label{
+  font-size: larger;
+  margin-inline-end: 10px;
+}
+
+.contain-fields{
+  width: 75vw;
+  min-width: 900px;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid gray;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+
+.contain-form-elements{
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.field-register{
+  width: 21vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 10px;
+}
+
+.table-max-width{
+  width: 75vw;
+}
+
+.input-height-small{
+  height: 3vh;
+  max-height: 20px;
+  font-size: 15px;
+}
+
+.th-width-medium{
+  width: 140px;
+}
+
+.input-height-medium{
+  height: 5vh;
+  max-height: 30px;
+  font-size: 15px;
+}
+
+
+.contain-filter-table{
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-filter{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.field-filter input{
+  height: 5vh;
+  max-height: 35px;
+}
+
+.second-block-product{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lbl-product{
+  font-size: 20px;
+}
+
+.contain-btn-reset{
+  margin-block-start: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Modal PRODUCT */
+.mdl-contain-fields{
+  width: 100%;
+  display: flex;
+  gap: 5vw;
+}
+.mdl-contain-input{
+  width: 40%;
+}
+.mdl-contain-select{
+  width: 40%;
+}
+
+
+.mdl-contain-buttons{
+  display: flex;
+  width: 15vw;
+}
+
+.mdl-first-block-btn{
+  margin-block-start: 2px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.mdl-first-block-btn button{
+  width: 6vw;
+}
+
+
+.mdl-second-block-btn{
+  width: 40%;
+}
+
+.style-btn-1{
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 3px;
+  height: 4vh;
+  font-size: 15px;
+}
+
+.div-modals{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.size-text-medium{
+  font-size: 15px;
+}
+
+.contain-elements{
+  display: flex;
+  
+}
+.input-width-small{
+  width: 50%;
+  font-size: 16px;
+}
+.contain-table-plantilla{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  --_c:no-repeat radial-gradient(farthest-side,#25b09b 92%,#0000);
+  background: 
+    var(--_c) top,
+    var(--_c) left,
+    var(--_c) right,
+    var(--_c) bottom;
+  background-size: 12px 12px;
+  animation: l7 1s infinite;
+}
+@keyframes l7 {to{transform: rotate(.5turn)}}
+
+.field-register-v2{
+  width: 100%;
+}
+
+/* .css-b62m3t-container{
+  width: 100%;
+} */
+
+.input-height-medium-v2{
+  width: 110%;
+  padding: 8px;
+  font-size: 16px;
+}
+.contain-select-v2{
+  padding: 8px;
+}
+
+.btn-submit-v2, .style-btn-1-v2{
+  width: 40%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gray;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.style-btn-1-v3{
+  width: 40%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gray;
+  cursor: pointer;
+  border-radius: 6px;
+  min-width: 100%;
+  max-height: 8vh;
+}
+
+
+.contain-form-v2{
+  width: 70%;
+  max-width: 1000px; /* Evita que sea demasiado ancho en pantallas grandes */
+  margin: 0 auto; /* Centrar en la pantalla */
+  padding: 12px;
+  border:4px solid gray;
+  border-radius: 8px;
+}
+.contain-fields-v2{
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos bajen en pantallas pequeñas */
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.div-btn-mdl{
+  display: flex;
+  width: 7vw;
+  gap: 10px;
+  min-width: 90px;
+}
+
+/* 📌 MEDIA QUERIES PARA MOVILES */
+@media (min-width: 768px) {
+  .contain_fields-v2 {
+    flex-direction: row;
+  }
+  
+  .field-register-v2 {
+    width: 48%; /* Hace que los inputs ocupen la mitad del espacio en pantallas grandes */
+  }
+
+  .select-block-v2 {
+    width: 48%;
+  }
+
+  .btn-submit-v2, .style-btn-1-v2 {
+    width: auto;
+  }
+  .div-btn-mdl{
+    display: flex;
+    width: 7vw;
+    gap: 10px;
+    
+  }
+}
+
+.contain-filter-table-v2{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas en pantallas pequeñas */
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+.contain-select-filter{
+  margin-inline-end:20px;
+}
+.field-filter-v2, .contain-btn-reset-v2{
+  width: 90%; /* Que ocupe todo el ancho en móviles */
+  display: flex;
+  flex-direction: column;
+}
+.size-text-medium-v2{
+  width: 90%; /* Input ocupa todo el ancho */
+  padding: 8px;
+  font-size: 16px;
+}
+.contain-btn-reset-v2  {
+  margin-block-start:22px;
+  padding-block-start:2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-style-filter{
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid gray;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .contain-filter-table-v2 {
+    flex-wrap: nowrap; /* En pantallas más grandes los filtros estarán en una sola línea */
+  }
+
+  .field-filter-v2,
+  .contain-btn-reset-v2 {
+    width: auto;
+  }
+}
+
+.table-categoria-v2{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-categoria-v2 th,
+.table-categoria-v2 td {
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.table-categoria-v2 tr{
+  height: 50px;
+}
+.table-categoria-v2 tr td{
+  border: 1px solid #fff;
+}
+
+.table-categoria-v2 th{
+  color: white;
+  border: 1px solid #fff;
+}
+.div-modals-v2{
+  display: flex;
+  gap: 6px;
+}
+
+.style-btn-1-v2{
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+
+/* 📌 HACER LA TABLA SCROLLEABLE EN MÓVILES */
+@media (max-width: 768px) {
+  .table-categoria-v2 {
+    display: block;
+    overflow-x: auto; /* Agrega scroll horizontal */
+    white-space: nowrap;
+  }
+
+  .table-categoria-v2 thead {
+    display: none; /* Oculta encabezados en pantallas pequeñas */
+  }
+
+  .table-categoria-v2 tbody,
+  .table-categoria-v2 tr {
+    display: block;
+    width: 100%;
+  }
+
+  .table-categoria-v2 td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table-categoria-v2 td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .div-modals-v2 {
+    flex-direction: column; /* Para que los botones no se amontonen */
+  }
+}
+

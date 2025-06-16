@@ -1,0 +1,17 @@
+body{
+  background-color: #222;
+  color: #fff;
+  font-family: system-ui;
+}
+
+.hidden-element{
+  animation: hiddElement 2s linear 0.5s forwards;
+}
+
+@keyframes hiddElement {
+  0%{
+    visibility:visible;
+  }100%{
+    visibility:hidden;
+  }
+}
